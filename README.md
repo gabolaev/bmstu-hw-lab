@@ -1,1 +1,1 @@
-#<center>BMSTU Web Development course hw and labs</center>
+# <div align="center"> BMSTU Web Development course hw and labs</div>
