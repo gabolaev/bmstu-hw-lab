@@ -1,1 +1,2 @@
-# <div align="center"> BMSTU Web Development course hw and labs</div>
+# <div align="center"> BMSTU IU6 sem3 HomeWorks and Labs</div>
+
