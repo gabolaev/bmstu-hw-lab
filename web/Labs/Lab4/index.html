@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Tests</title>
+    <style>
+        .tree {
+            font-weight: bold;
+            font-family: monospace;
+            height: 1px;
+        }
+
+        .tree h4 {
+            margin: 0;
+        }
+
+        button {
+            maring: 2px;
+        }
+    </style>
+</head>
+
+<body>
+<div id="tooltip"></div>
+<div id="signinModal" class="modalWrapper">
+    <div class="singupModalWrapper">
+        <div class="mainModalTitle">
+            <span class="loginAccessTitle-en">Login or sign up</span>
+        </div>
+        <div class="modal-close js_closeModal"></div>
+        <div class="modal-body clearfix">
+            <form autocomplete="off" class="js-loginFormModal">
+                <input type="hidden" class="js-redirect" name="redirect"
+                       value="Fs7rVmIEvUmYNVocHXTG5D9xF5mGODEA2zbeq92AJGc."/>
+                <input type="hidden" name="token" id="token"
+                       value="MTUwNjcyNDgxNyQhOqtNnN3W_Eg1Ay09l9YgvOMcWVlZo3vjs1jSMCwnc-52nhSv8RFXKo6JmRl0RhhyHXybBHJbC-Bj2ABOp0k."/>
+                <input type="hidden" name="remember_me" value="1"/>
+                <input type="hidden" name="from" value="pc_login_modal_:index">
+
+                <div class="leftSide floatLeft loginColumnLeft-en">
+                    <p class="signinError" style="display:none;"></p>
+                    <p id="signinLoggingin" style="display:none;">Logging in...</p>
+                    <div><input id="usernameModal" placeholder="Username (6+ characters)"
+                                class="js-signinUsernameModal signup_field" name="username" maxlength="50" type="text"
+                                value=""></div>
+                    <div><input id="passwordModal" placeholder="Password (6+ characters)"
+                                class="js-signinPasswordModal signup_field" name="password" type="password" value="">
+                    </div>
+                    <div class="loginAccessRemember">
+                        <input type="checkbox" checked id="signinRemember"/>
+                        <label for="signinRemember">Remember me on this computer<br/>
+                            <span class="loginAccessRememberInfo">(not recommended on public or shared computers)</span>
+                        </label>
+                    </div>
+                    <div id="signinSubmit" class="orangeButton buttonBase js-loginSubmitModal">Login</div>
+                    <div class="leftCol">
+                        <ul>
+                            <li>
+                            <li><a id="signinForgotpassword" href="/front/lost_password"
+                                   onclick="ga('send', 'event', 'Login Page', 'click', 'Lost Password');">Forgot
+                                Username or Password?</a></li>
+                            |
+                            <li><a id="signinConfirmationEmail" href="/front/resend_confirmation_email"
+                                   onclick="ga('send', 'event', 'Login Page', 'click', 'Resend Confirmation');">Resend
+                                confirmation email</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="rightSide floatRight loginColumnRight-en">
+                    <h2 class="loginAccessTitle-en">Not a free member yet?</h2>
+                    <span class="loginAccessMessage loginAccessMessageRight">Here's what you're missing out on!</span><br/><br/>
+                    <ul class="clearfix">
+                        <li><i class="mark registerSprite enabled"></i><span class="tab1">Download Videos</span></li>
+                        <li><i class="mark registerSprite enabled"></i><span>Post Comments</span></li>
+                        <li><i class="mark registerSprite enabled"></i><span class="tab3">Add Favorites</span></li>
+                        <li><i class="mark registerSprite enabled"></i><span class="tab4">Create Playlists</span></li>
+                        <br>
+                        <li>And many more!</li>
+                    </ul>
+                    <br/><a class="buttonBase greyButton" id="signupButtonId" href="/create_account_select">Sign Up</a>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="create-playlist-modal" class="modalWrapper">
+    <div class="playlist-modal">
+        <div class="modal-title">Create a new Playlist</div>
+        <div id="MHP1138-playlist-form" class="">
+            <form autocomplete="off">
+                <div class="error display-none">Please enter the required information</div>
+                <label for="MHP1138-new-playlist-title">Title*:</label>
+                <input type="text" name="title" id="MHP1138-new-playlist-title" maxlength="35">
+
+                <label for="MHP1138-new-playlist-tags">Tags*:</label>
+                <input type="text" name="tags" id="MHP1138-new-playlist-tags" maxlength="150">
+
+                <label for="MHP1138-new-playlist-description">Description:</label><br>
+                <textarea name="description" rows="20" cols="20" id="MHP1138-new-playlist-description"></textarea>
+                <label for="MHP1138-new-playlist-privacy">Privacy*:</label>
+
+                <div class="filters privacySelector" id="MHP1138-new-playlist-privacy">
+                    <div class="dropdownTrigger">
+                        <div>
+                            <span class="textFilter">Public</span>
+                            <span class="arrowFilters"></span>
+                        </div>
+                        <ul class="filterListItem dropdownWrapper" style="display: none;">
+                            <li class="active" name="public"><span>Public</span></li>
+                            <li name="private"><span>Private</span></li>
+                        </ul>
+                    </div>
+                    <input type="hidden">
+                </div>
+                <div class="modal-footer clearfix">
+                    <input type="submit" name="submit" value="Save" id="MHP1138-add-playlist"
+                           class="submit-button buttonBase orangeButton">
+                    <a class="buttonBase greyButton cancelButton" onclick="clearModalPlaylist();"
+                       data-modal="createPlaylist">Cancel</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="tree">
+    </div>
+    <button onclick="nodesTree(document.body, 1)">Build a tree</button>
+    <script>
+        var tree = document.getElementsByClassName('tree');
+
+        function nodesTree(node, depth) {
+            var newNode;
+            if (node.nodeName && node.className !== 'tree') {
+                newNode = document.createElement('h4');
+                newNode.innerHTML = ('&nbsp;'.repeat(2 * depth) + node.nodeName);
+                tree[0].appendChild(newNode);
+            } else {
+                return;
+            }
+            for (var i in node.children)
+                nodesTree(node.children[i], depth + 1);
+
+            tree[0].appendChild(newNode.cloneNode(true));
+        }
+    </script>
+</div>
+</body>
+
+</html>
