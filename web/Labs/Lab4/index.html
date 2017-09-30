@@ -133,14 +133,16 @@
             var newNode;
             if (node.nodeName && node.className !== 'tree') {
                 newNode = document.createElement('h4');
-                newNode.innerHTML = ('&nbsp;'.repeat(2 * depth) + node.nodeName);
+                printLine = ('&nbsp;'.repeat(2 * depth) + node.nodeName);
+                newNode.innerHTML = printLine;
+                console.log(printLine);
                 tree[0].appendChild(newNode);
             } else {
                 return;
             }
             for (var i in node.children)
                 nodesTree(node.children[i], depth + 1);
-
+            console.log(printLine);
             tree[0].appendChild(newNode.cloneNode(true));
         }
     </script>
