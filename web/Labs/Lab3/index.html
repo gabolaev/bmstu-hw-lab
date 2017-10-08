@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <meta charset="utf-8">
+    <title>Tests</title>
+    <style>
+        table {
+            position: absolute;
+            left: 20%;
+            border: solid 4px black;
+            border-collapse: collapse;
+        }
+
+        th {
+            text-align: left;
+            padding: 5px;
+            border: 2px solid black;
+        }
+
+        td {
+            padding: 5px;
+            border: 2px solid black;
+        }
+
+        .basket td:hover {
+            background-color: red;
+        }
+
+        .catalogue{
+            left: 40%;
+
+        }
+
+        .catalogue tr:hover{
+            background-color: green;
+        }
+
+        p {
+            margin: 1px 10px 2px 2px;
+        }
+
+        .addingForm {
+            float: left;
+        }
+
+        .addingForm button{
+            margin: 50px 0 20px 0;
+            height: 30px;
+        }
+
+        .addingBtn {
+            border-color: #000;
+            margin-left: 10px;
+            height: 80px;
+        }
+    </style>
+</head>
+<body>
+<table class="basket" id = "basket">
+    <tr>
+        <td>Наименование</td>
+        <td>Цена</td>
+    </tr>
+</table>
+<table class="catalogue">
+    <tr>
+        <td>Наименование</td>
+        <td>Цена</td>
+    </tr>
+    <tr onclick="addTovar(this.cells[0].innerText, this.cells[1].innerText)">
+        <td> Google Pixel </td>
+        <td> 583.53 </td>
+    </tr>
+    <tr onclick="addTovar(this.cells[0].innerText, this.cells[1].innerText)">
+        <td> Apple iPhone 8</td>
+        <td> 638.78 </td>
+    </tr>
+    <tr onclick="addTovar(this.cells[0].innerText, this.cells[1].innerText)">
+        <td> Meizu Pro 6</td>
+        <td> 347.20 </td>
+    </tr>
+
+</table>
+<div class="addingForm">
+    <div>
+        <p>Наименование:</p>
+        <label>
+            <input type="text" id="name">
+        </label>
+    </div>
+    <div>
+        <p>Цена:</p>
+        <label>
+            <input type="text" id="price">
+        </label>
+    </div>
+    <div>
+        <script>
+            function countSum(){
+                var intResult = 0;
+                var result = document.getElementById('summary');
+                // language=JQuery-CSS
+                $('.basket tr').each(function(tr) {
+                    $('td', this).each(function (j) {
+                        if(!isNaN($(this).text())){
+                            intResult += parseFloat($(this).text(), 2);
+                            result.innerText = intResult;
+                        }
+                    })
+                });
+            }
+        </script>
+        <button onclick="countSum()">
+            Сумма заказа
+        </button>
+    </div>
+    <label id="summary">0</label>
+</div>
+<button onclick="addTovar(document.getElementById('name').value,
+                          document.getElementById('price').value)"
+        class="addingBtn">Добавить
+</button>
+<script>
+    function addTovar(nameText, priceText) {
+        if (nameText && priceText) {
+            var table = document.getElementsByClassName("basket")[0];
+            var row = table.insertRow(table.rows.length);
+            var name = row.insertCell(0);
+            var price = row.insertCell(1);
+            name.innerText = nameText;
+            price.innerText = priceText;
+        }
+    }
+</script>
+</body>
+</html>
