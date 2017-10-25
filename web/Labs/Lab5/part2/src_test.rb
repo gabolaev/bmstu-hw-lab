@@ -23,5 +23,4 @@ class SquareTest < MiniTest::Test
     assert_equal "иногда перемены к худшему",
                  string_handler("иногда перемены к худшему")
   end
-
 end

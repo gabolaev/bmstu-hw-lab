@@ -1,8 +1,8 @@
 require 'minitest/autorun'
 require './src'
 
-# Shut up rubocop
-class SquareTest < MiniTest::Test
+# This class is really wonderful
+class Test < MiniTest::Test
   # Called before every test method runs. Can be used
   # to set up fixture information.
 
@@ -18,15 +18,13 @@ class SquareTest < MiniTest::Test
   end
 
   def test_ok
-    calc_for_ok = Calculator.new
-    assert_equal 140.00, calc_for_ok.calculate(5)
+    assert_equal 140.00, calculate(5)
   end
 
   # Fake test
   def test_fail
-    calc_for_fail = Calculator.new
     assert_raises TypeError do
-      calc_for_fail.calculate 'hello'
+      calculate 'hello'
     end
   end
 end
