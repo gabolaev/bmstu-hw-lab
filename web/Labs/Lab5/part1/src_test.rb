@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './src'
+require './part1/src'
 
 # This class is really wonderful
 class Test < MiniTest::Test
@@ -19,6 +19,8 @@ class Test < MiniTest::Test
 
   def test_ok
     assert_equal 140.00, calculate(5)
+    assert !(calculate(0).infinite?.nil?)
+
   end
 
   # Fake test

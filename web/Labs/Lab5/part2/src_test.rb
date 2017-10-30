@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require './src'
+require_relative '../part2/src'
 
 # Shut up rubocop
 class SquareTest < MiniTest::Test
@@ -23,4 +23,5 @@ class SquareTest < MiniTest::Test
     assert_equal "иногда перемены к худшему",
                  string_handler("иногда перемены к худшему")
   end
+
 end
