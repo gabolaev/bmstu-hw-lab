@@ -9,5 +9,7 @@ def create_files
     g = File.open('G.txt', 'w')
     h = File.open('H.txt', 'w')
     f.readlines.each { |line| line.to_i.even? ? g.write(line) : h.write(line) }
+    g.close
+    h.close
   end
 end

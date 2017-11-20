@@ -23,34 +23,23 @@ class Point
   def cartesian_y
     (@rad * Math.sin(@phi.degrees)).round(2)
   end
-  attr_reader :rad, :phi
-  private :rad, :phi
+  # private :rad, :phi
 end
 
 # Circle class definition.
-class Circle
+class Circle < Point
   def initialize(center_rad, center_deg, circle_rad)
-    @circle_center = Point.new(center_rad, center_deg)
+    super(center_rad, center_deg)
     @circle_rad = circle_rad
   end
 
   def print_info
     puts 'Circle center polar coordinates:'
-    puts @circle_center.print_coords
+    print_coords
     puts "Circle radius is a #{@circle_rad}"
-  end
-
-  def center_x
-    @circle_center.cartesian_x
-  end
-
-  def center_y
-    @circle_center.cartesian_y
   end
 
   def center_rad
     @circle_rad
   end
-  attr_reader :circle_rad, :circle_center
-  private :circle_rad
 end

@@ -7,6 +7,15 @@ def find_with_precision_no_enum(precision)
   precision = precision.to_f
   now_val = 1.0
   k = 0
-  now_val += next_val k += 1 while (now_val - 1 / Math::E).abs > precision
+  prev_val = 0
+
+  while((now_val - prev_val).abs > precision)
+    prev_val = now_val
+    now_val += next_val(k += 1)
+
+    puts "#{prev_val} => #{now_val}"
+  end
+  # prev_val += now_val += next_val k += 1 while (now_val - 1 / Math::E).abs > precision
   now_val
 end
+
