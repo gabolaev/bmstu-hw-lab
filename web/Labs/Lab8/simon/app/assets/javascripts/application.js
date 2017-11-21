@@ -12,16 +12,4 @@
 //
 // = require rails-ujs
 // = require turbolinks
-// = require jquery
 // = require_tree .
-
-function show_result(data) {
-    var result = document.getElementById("results");
-    result.innerHTML = "<hr/>Result: " + data.value;
-}
-
-$(document).ready(function () {
-    $ ('#input_form').bind("ajax:success", function (xrs, data, status) {
-            show_result(xrs.detail[0])
-        })
-})

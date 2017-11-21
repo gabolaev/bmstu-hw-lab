@@ -1,4 +1,4 @@
-<%= form_tag url_for(controller: 'simon', action: 'output'), method: 'get' do %>
+<%= form_tag('/simon/output.json', :method => 'get', remote: true, id: 'input_form') do %>
 
     <%= label_tag :text, 'Существует гипотеза Симона о факториале.' %>
     <br>
@@ -13,5 +13,7 @@
     <br>
     <%= submit_tag 'Проверить' %>
 <% end %>
+
+<div id="results"></div>
 
 

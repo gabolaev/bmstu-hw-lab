@@ -37,6 +37,15 @@ class SimonController < ApplicationController
       end
     end
 
-    render :output
+    respond_to do |format|
+      format.html
+      format.json do
+        render json: { type: @results.class.to_s,
+                       results: @results,
+                       for_facts: @for_facts,
+                       iters: @iters,
+                       error: @error}
+      end
+    end
   end
 end

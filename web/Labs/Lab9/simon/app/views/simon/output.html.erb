@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    h2 {
+      font-family: "Courier New", serif;
+    }
+
+    table {
+      border: solid 2px black;
+      border-collapse: collapse;
+    }
+
+    td {
+      text-align: center;
+      border: 2px solid black;
+    }
+
+  </style>
+</head>
+<body>
+<% if @error %>
+    <p><%= @results %></p>
+    <%= form_tag url_for(controller: 'simon', action: 'input'), method: 'get' do %>
+      <% submit_tag 'Обратно' %>
+    <% end %>
+
+<% else %>
+    <h2> По результатам вычислений найдено <%= @results.length %> таких факториалов. <br> А именно: </h2>
+    <% @results.each do |result| %>
+        <p> <%= result.to_i %></p>
+    <% end %>
+    <h3> Ниже расположены все рассчёты. </h3>
+    <hr>
+    <table>
+      <% @iters.zip(@for_facts).each do |i| %>
+          <tr>
+            <td><%= i[0][0]+3 %>! = <%= i[1] %></td>
+            <td>
+              <% i[0][1].each do |j| %>
+                  <p> <%= j[1] %></p>
+              <% end %></td>
+          </tr>
+      <% end %>
+    </table>
+<% end %>
+</body>
+</html>
