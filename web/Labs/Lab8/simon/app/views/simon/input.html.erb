@@ -1,4 +1,4 @@
-<%= form_tag url_for(controller: 'simon', action: 'output'), method: 'get' do %>
+<%= form_tag('/simon/output.json', :method => 'get', remote: true, id: 'input_form') do %>
 
     <%= label_tag :text, 'Существует гипотеза Симона о факториале.' %>
     <br>
@@ -7,10 +7,12 @@
     <%= label_tag :text, 'Например: 4! = 2 · 3 · 4.' %>
 
     <br><br>
-    <%= label_tag :text, 'Введите число (не больше 15), все факториалы до которого будем анализировать на поиск вышеуказанных 4 чисел.'%>
+    <%= label_tag :text, 'Введите число (не больше 15), все факториалы до которого будем анализировать на поиск вышеуказанных 4 чисел.' %>
     <br>
     <%= text_area_tag :to_value %>
     <br>
     <%= submit_tag 'Проверить' %>
 
 <% end %>
+
+<div id="results"></div>
