@@ -4,7 +4,7 @@ sem3 leaks/
 seminars-autumn-17/
 Methodical instructions/
 ELTEX/
-.pages
-.zip
+*.pages
+*.zip
 .pdf
 RK2/
