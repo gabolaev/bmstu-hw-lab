@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="transform.xslt"?>
+<hash>
+  <results type="array">
+    <result type="float">6.0</result>
+    <result type="float">24.0</result>
+    <result type="float">120.0</result>
+    <result type="float">720.0</result>
+  </results>
+  <for-facts type="array">
+    <for-fact type="float">6.0</for-fact>
+    <for-fact type="float">24.0</for-fact>
+    <for-fact type="float">120.0</for-fact>
+    <for-fact type="float">720.0</for-fact>
+    <for-fact type="float">5040.0</for-fact>
+    <for-fact type="float">40320.0</for-fact>
+  </for-facts>
+  <iters type="array">
+    <iter type="array">
+      <iter>1 * 2 * 3 = 6</iter>
+    </iter>
+    <iter type="array">
+      <iter nil="true"/>
+      <iter>2 * 3 * 4 = 24</iter>
+    </iter>
+    <iter type="array">
+      <iter nil="true"/>
+      <iter nil="true"/>
+      <iter>3 * 4 * 5 = 60</iter>
+      <iter>4 * 5 * 6 = 120</iter>
+    </iter>
+    <iter type="array">
+      <iter nil="true"/>
+      <iter nil="true"/>
+      <iter nil="true"/>
+      <iter>4 * 5 * 6 = 120</iter>
+      <iter>5 * 6 * 7 = 210</iter>
+      <iter>6 * 7 * 8 = 336</iter>
+      <iter>7 * 8 * 9 = 504</iter>
+      <iter>8 * 9 * 10 = 720</iter>
+    </iter>
+    <iter type="array">
+      <iter nil="true"/>
+      <iter nil="true"/>
+      <iter nil="true"/>
+      <iter nil="true"/>
+      <iter>5 * 6 * 7 = 210</iter>
+      <iter>6 * 7 * 8 = 336</iter>
+      <iter>7 * 8 * 9 = 504</iter>
+      <iter>8 * 9 * 10 = 720</iter>
+      <iter>9 * 10 * 11 = 990</iter>
+      <iter>10 * 11 * 12 = 1320</iter>
+      <iter>11 * 12 * 13 = 1716</iter>
+      <iter>12 * 13 * 14 = 2184</iter>
+      <iter>13 * 14 * 15 = 2730</iter>
+      <iter>14 * 15 * 16 = 3360</iter>
+      <iter>15 * 16 * 17 = 4080</iter>
+      <iter>16 * 17 * 18 = 4896</iter>
+    </iter>
+    <iter type="array">
+      <iter nil="true"/>
+      <iter nil="true"/>
+      <iter nil="true"/>
+      <iter nil="true"/>
+      <iter nil="true"/>
+      <iter>6 * 7 * 8 = 336</iter>
+      <iter>7 * 8 * 9 = 504</iter>
+      <iter>8 * 9 * 10 = 720</iter>
+      <iter>9 * 10 * 11 = 990</iter>
+      <iter>10 * 11 * 12 = 1320</iter>
+      <iter>11 * 12 * 13 = 1716</iter>
+      <iter>12 * 13 * 14 = 2184</iter>
+      <iter>13 * 14 * 15 = 2730</iter>
+      <iter>14 * 15 * 16 = 3360</iter>
+      <iter>15 * 16 * 17 = 4080</iter>
+      <iter>16 * 17 * 18 = 4896</iter>
+      <iter>17 * 18 * 19 = 5814</iter>
+      <iter>18 * 19 * 20 = 6840</iter>
+      <iter>19 * 20 * 21 = 7980</iter>
+      <iter>20 * 21 * 22 = 9240</iter>
+      <iter>21 * 22 * 23 = 10626</iter>
+      <iter>22 * 23 * 24 = 12144</iter>
+      <iter>23 * 24 * 25 = 13800</iter>
+      <iter>24 * 25 * 26 = 15600</iter>
+      <iter>25 * 26 * 27 = 17550</iter>
+      <iter>26 * 27 * 28 = 19656</iter>
+      <iter>27 * 28 * 29 = 21924</iter>
+      <iter>28 * 29 * 30 = 24360</iter>
+      <iter>29 * 30 * 31 = 26970</iter>
+      <iter>30 * 31 * 32 = 29760</iter>
+      <iter>31 * 32 * 33 = 32736</iter>
+      <iter>32 * 33 * 34 = 35904</iter>
+      <iter>33 * 34 * 35 = 39270</iter>
+    </iter>
+  </iters>
+</hash>

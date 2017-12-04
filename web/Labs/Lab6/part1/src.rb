@@ -9,7 +9,7 @@ def find_with_precision_no_enum(precision)
   k = 0
   prev_val = 0
 
-  while((now_val - prev_val).abs > precision)
+  while (now_val - prev_val).abs > precision
     prev_val = now_val
     now_val += next_val(k += 1)
 
