@@ -1,0 +1,2 @@
+class SimonFactorial < ApplicationRecord
+end

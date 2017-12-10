@@ -1,0 +1,16 @@
+<%= form_tag url_for(controller: :simon_with_db, action: :output), method: 'post' do %>
+  <br>
+  <div class="form-group">
+    <legend>Легенда</legend>
+    <%= label_tag :text, 'Существует гипотеза Симона о факториале.
+      Она гласит, что существует 4 факториала, которые представимы в виде произведения трех последовательных чисел.
+      Например: 4! = 2 · 3 · 4.' %>
+  </div>
+  <div class="form-group">
+    <%= label_tag :text, 'Введите число (не больше 15), все факториалы до которого будем анализировать на поиск вышеуказанных 4 чисел.' %>
+    <%= text_area_tag :to_value, nil, class: "form-control", size: "1x1"%>
+  </div>
+
+  <%= submit_tag 'Отправить', class: 'btn btn-primary' %>
+
+<% end %>

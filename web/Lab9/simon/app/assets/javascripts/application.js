@@ -55,13 +55,10 @@ function show_result(data) {
             calculationsCell.appendChild(calc);
         }
     });
-
-
 }
 
 $(document).ready(function () {
     $('#input_form').bind("ajax:success", function (xrs, data, status) {
         show_result(xrs.detail[0]);
-        console.log(xrs.detail[0]);
     })
 });
