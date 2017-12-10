@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171210154441) do
+ActiveRecord::Schema.define(version: 20171210190023) do
 
   create_table "simon_factorials", force: :cascade do |t|
     t.integer "input_value"
@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 20171210154441) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "password_hash"
+    t.string "password_digest"
   end
 
 end

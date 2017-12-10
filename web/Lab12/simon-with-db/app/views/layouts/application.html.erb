@@ -9,6 +9,20 @@
 </head>
 
 <body>
+<nav class="navbar navbar-default" role="navigation">
+  <div class="container">
+    <% if logged_in? %>
+      <ul class="nav navbar-nav navbar-left">
+        <li><%= link_to 'Выйти', signout_path, class: 'btn btn-primary' %></li>
+      </ul>
+    <% else %>
+      <ul class="nav navbar-nav navbar-left">
+        <li><%= link_to 'Войти', signin_path, class: 'btn btn-primary' %>
+          <%= link_to 'Зарегистрироваться', signup_path, class: 'btn btn-primary' %></li>
+      </ul>
+    <% end %>
+  </div>
+</nav>
 <div class=" container">
   <%= yield %>
 </div>

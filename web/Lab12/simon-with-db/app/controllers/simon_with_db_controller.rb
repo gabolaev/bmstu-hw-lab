@@ -2,6 +2,7 @@ class SimonWithDbController < ApplicationController
   include SimonWithDbHelper
 
   before_action :check_params, only: :output
+  before_action :check_login, only: :output
 
   def input; end
 
@@ -33,6 +34,11 @@ class SimonWithDbController < ApplicationController
     end
   end
 
+  def check_login
+    unless logged_in?
+      redirect_to '/signup'
+    end
+  end
 
   def dump_in_xml
 
