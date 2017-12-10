@@ -26,6 +26,6 @@ module SimonWithDbHelper
         composition = a * b * c
       end
     end
-    {results: @results, for_facts: @for_facts, iters: @iters}
+    { results: @results, for_facts: @for_facts, iters: @iters }
   end
 end

@@ -7,7 +7,7 @@ class SimonFactorialTest < ActiveSupport::TestCase
 
   test 'should test inserting' do
     SimonFactorial.create(input_value: 42, result_value: 'this is the answer to everything')
-    assert_equal 'this is the answer to everything', SimonFactorial.find_by_input_value(42).result_value;
+    assert_equal 'this is the answer to everything', SimonFactorial.find_by_input_value(42).result_value
   end
 
   test 'should not insert twice' do
