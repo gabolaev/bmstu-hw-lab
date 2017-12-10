@@ -1,7 +1,5 @@
 class UsersController < ApplicationController
 
-  before_action :check_params
-
   def new
     @user = User.new
   end
@@ -12,7 +10,8 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_url
     else
-      render :new
+      redirect_to signup_path
+      flash[:message] = 'Неверный формат введённых данных'
     end
   end
 
@@ -22,8 +21,4 @@ class UsersController < ApplicationController
     params.require(:user).permit(:username, :password, :password_confirmation)
   end
 
-  def check_params
-    p params[:password_confirmation]
-    redirect_to '/signup' if params[:password] != params[:password_confirmation]
-  end
 end
