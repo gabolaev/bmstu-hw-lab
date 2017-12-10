@@ -2,7 +2,6 @@ class SimonWithDbController < ApplicationController
   include SimonWithDbHelper
 
   before_action :check_params, only: :output
-  before_action :check_login
 
   def input; end
 
@@ -20,13 +19,6 @@ class SimonWithDbController < ApplicationController
 
     render xml: eval(rsp).to_xml
     # dump_in_xml
-  end
-
-  private def check_login
-    unless logged_in?
-      flash[:login] = "Please log in"
-      redirect_to '/signin'
-    end
   end
 
   protected
