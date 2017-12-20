@@ -14,13 +14,12 @@
   </style>
 </head>
 
-
-
 <body>
 <nav class="navbar navbar-default" role="navigation">
   <div class="container">
-    <% if logged_in? %>
+    <% if logged_in %>
       <ul class="nav navbar-nav navbar-left">
+        <li><%= link_to @current_user.username, @current_user %></li>
         <li><%= link_to 'Выйти', signout_path, class: 'btn btn-primary' %></li>
       </ul>
     <% else %>
@@ -32,6 +31,7 @@
   </div>
 </nav>
 
+
 <% flash.each do |name, msg| %>
   <%= content_tag(
           :div, msg,
@@ -39,7 +39,7 @@
       ) %>
 <% end %>
 
-<div class=" container">
+<div class="container">
   <%= yield %>
 </div>
 </body>

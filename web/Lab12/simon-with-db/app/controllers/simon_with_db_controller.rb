@@ -33,7 +33,7 @@ class SimonWithDbController < ApplicationController
   end
 
   def check_login
-    unless logged_in?
+    unless logged_in
       redirect_to signin_url
       flash[:message] = 'Вы не авторизованы'
     end

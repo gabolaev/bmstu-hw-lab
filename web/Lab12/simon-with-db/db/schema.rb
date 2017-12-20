@@ -10,16 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20_171_210_190_023) do
-  create_table 'simon_factorials', force: :cascade do |t|
-    t.integer 'input_value'
-    t.text 'result_value'
-    t.index ['id'], name: 'index_simon_factorials_on_id', unique: true
-    t.index ['input_value'], name: 'index_simon_factorials_on_input_value', unique: true
+ActiveRecord::Schema.define(version: 20171220124931) do
+
+  create_table "simon_factorials", force: :cascade do |t|
+    t.integer "input_value"
+    t.text "result_value"
+    t.index ["id"], name: "index_simon_factorials_on_id", unique: true
+    t.index ["input_value"], name: "index_simon_factorials_on_input_value", unique: true
   end
 
-  create_table 'users', force: :cascade do |t|
-    t.string 'username'
-    t.string 'password_digest'
+  create_table "users", force: :cascade do |t|
+    t.string "username", null: false
+    t.string "password_digest"
   end
+
 end

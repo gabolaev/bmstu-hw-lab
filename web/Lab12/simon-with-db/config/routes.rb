@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :auth
 
   post 'auth/create'
+  post 'users/edit'
 
   get 'signup', to: 'users#new', as: 'signup'
   get 'signin', to: 'auth#new', as: 'signin'

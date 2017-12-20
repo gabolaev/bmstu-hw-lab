@@ -1,0 +1,11 @@
+<h2>Registered Users</h2>
+
+<table class="table">
+  <% @users.each do |user| %>
+    <tr>
+      <td>
+        <%= link_to user.username, user %>
+      </td>
+    </tr>
+  <% end %>
+</table>

@@ -1,0 +1,14 @@
+<div class="text-center">
+  <h1 class="m-3 d-block">
+    <%= 'Welcome, ' if same_user %>
+    <%= @user.username %>
+  </h1>
+
+  <% if same_user %>
+      <ul>
+        <li><%= link_to 'Sign out', signout_path %></li>
+        <li><%= link_to 'Change password', edit_user_path(@user) %></li>
+        <li><%= link_to 'Delete account', @user, method: :delete, data: {confirm: 'Are you sure?'} %></li>
+      </ul>
+  <% end %>
+</div>
