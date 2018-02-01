@@ -16,7 +16,7 @@ class UserTest < ActionDispatch::IntegrationTest
 
   test 'should create users' do
     old_count = User.count
-    post users_path, params: { user: { username: 'hey_now_you', password: 'are_an_all-star' } }
+    post users_path, params: { user: { username: 'users_for_some_tests', password: 'wigle-wigle-wigle' } }
     new_count = User.count
     assert new_count > old_count
   end

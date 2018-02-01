@@ -1,3 +1,4 @@
+
 # def next_val(k)
 #   ((-1)**k) / (1..k).inject(:*).to_f
 # end

@@ -1,8 +1,9 @@
 #include <iostream>
 #include <vector>
 #include <array>
+#include <fstream>
 
-#define ALPHABET_SIZE 256
+#define ALPHABET_SIZE 1000
 
 void countingSort(std::vector<std::string> &words, int from, int to, int letterIndex,
                   std::array<int, ALPHABET_SIZE + 1> &counters) {
@@ -41,15 +42,16 @@ void MSDSort(std::vector<std::string> &words, int from, int howMuch, int letterI
 
 int main() {
 
+    std::fstream fs;
+    fs.open("../all_passes.txt", std::fstream::in);
     std::vector<std::string> words;
     std::string input;
-    while (std::cin >> input)
+    while(fs >> input)
         words.push_back(input);
 
     MSDSort(words, 0, static_cast<int>(words.size()), 0);
-
     for (auto &word : words)
         std::cout << word << std::endl;
-
+    fs.close();
     return 0;
 }

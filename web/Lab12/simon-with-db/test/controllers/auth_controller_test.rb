@@ -2,12 +2,12 @@ require 'test_helper'
 
 class AuthControllerTest < ActionDispatch::IntegrationTest
   test 'should get signin' do
-    get auth_signin_url
+    get signin_path
     assert_response :success
   end
 
   test 'should get signout' do
-    get auth_signout_url
+    get signout_path
     assert_response :success
   end
 end
